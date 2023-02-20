@@ -6,26 +6,23 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    public class ChiSquare
+    public static class ChiSquare
     {
-        private readonly int numberAmount; 
-        // M
-        private readonly double k = 0.5;
-        private readonly int intervalAmount = 20;
-        // sigma
-        private readonly double lambda = 0.16;
+       public static bool Check(IGenerator generator)
+       {
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
+             
+            double chiCritical = excel.WorksheetFunction.ChiInv(0.05, generator.IntervalAmount - 2 - 1);
+            double chiExperimental = 0;
 
-        public ChiSquare(int _numberAmount, double _k, int _intervalAmount, double _lambda) {
-            if ( _numberAmount <= 0) throw new ArgumentOutOfRangeException("Number amount must be positive");
-            numberAmount = _numberAmount;
-            if (_intervalAmount <= 0) throw new ArgumentOutOfRangeException("Interval amount must be positive");
-            intervalAmount = _intervalAmount;
-            
-            k = _k;
-            lambda = _lambda;
-        }
-        
-
-
+            for (int i = 0; i < generator.IntervalAmount; i++)
+            {
+                chiExperimental += Math.Pow(generator.Intervals[i].PointsAmount - generator.NumberAmount / generator.IntervalAmount, 2) 
+                    / (generator.NumberAmount / generator.IntervalAmount); 
+            }
+            Console.WriteLine($"{chiCritical} {chiExperimental}");
+            excel.Quit();
+            return (chiExperimental < chiCritical) ? true : false;
+       }
     }
 }

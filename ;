@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Test
+{
+    public class PiecewiseApproximation
+    {
+        private Random random;
+        private WeibullDistribution weibullDistribution;
+        
+        public int NumberAmount { get; set; }
+        public double K { get; set; }
+        public double Lambda {  get; set; } 
+        
+        public int IntervalAmount { get; set; }
+        public PiecewiseApproximation()
+        {
+            random= new Random();
+        }
+
+        public PiecewiseApproximation(int numberAmount, double k, double lambda, int intervalAmoutn) : base()
+        {
+            weibullDistribution = new WeibullDistribution(k, lambda);
+            if ( numberAmount <= 0) throw new ArgumentOutOfRangeException(nameof(numberAmount));
+            NumberAmount = numberAmount;
+            K = k;
+            Lambda = lambda;
+        }
+
+        public double CalculateNextBorder(double x)
+        {
+            double t = Math.Log(Math.Exp(-Lambda * Math.Pow(x, K)) - 1 / intervalAmount) / -Lambda;
+            return Math.Pow(t, (double)1 / K);
+        }
+    }
+}
