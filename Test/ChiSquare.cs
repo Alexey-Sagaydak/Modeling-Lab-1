@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Test
 {
-    public static class ChiSquare
+    public class ChiSquare
     {
-       public static bool Check(IGenerator generator)
+        public double chiExperimental { get; private set; }
+        public double chiCritical { get; private set; }
+       public bool Check(IGenerator generator)
        {
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
-             
-            double chiCritical = excel.WorksheetFunction.ChiInv(0.05, generator.IntervalAmount - 2 - 1);
-            double chiExperimental = 0;
+            chiExperimental = 0; 
+            chiCritical = excel.WorksheetFunction.ChiInv(0.05, generator.IntervalAmount - 2 - 1);
 
             for (int i = 0; i < generator.IntervalAmount; i++)
             {
