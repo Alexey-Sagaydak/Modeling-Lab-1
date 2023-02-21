@@ -8,7 +8,7 @@ namespace Test
 {
     public class WeibullDistributionViewModel
     {
-        private IGenerator generator;
+        public IGenerator generator;
         private ChiSquare chiSquare;
 
         public double k { get; set; }
@@ -35,7 +35,7 @@ namespace Test
             intervalAmount = _interalAmount;
 
             Frequencies = new double[intervalAmount];
-            CurvePoints = new double[intervalAmount * 10];
+            CurvePoints = new double[intervalAmount];
             Middles = new double[intervalAmount];
 
             generator = new PiecewiseApproximation(new WeibullDistribution(k, lambda), numberAmount, intervalAmount);
@@ -47,9 +47,9 @@ namespace Test
             InitializeFields(_k, _lambda, _numberAmount, _interalAmount);
             generator.Generate();
 
+            chiSquareResult = chiSquare.Check(generator);
             chiExperimental = chiSquare.chiExperimental;
             chiCritical = chiSquare.chiCritical;
-            chiSquareResult = chiSquare.Check(generator);
 
             CalculateFrequencies();
             CalculateCurvePoints();
@@ -66,12 +66,8 @@ namespace Test
         }
         private void CalculateCurvePoints()
         {
-            int index = 0;
-            for (double i = 0; i < generator.Intervals[intervalAmount - 1].RightBorder; i += 0.1)
-            {
-                CurvePoints[index] = generator.weibullDistribution.Calculate(i);
-                index++;
-            }
+            for (int i = 0; i < intervalAmount; i++)
+                CurvePoints[i] = generator.weibullDistribution.Calculate(generator.Intervals[i].Middle);
         }
     }
 }
