@@ -11,7 +11,7 @@ namespace Test
         public double LeftBorder { get; set; }
         public double RightBorder { get; set; }
         public int PointsAmount { get; set; }
-        public double Middle { get; private set; }
+        public double Middle { get; set; }
 
         public Interval (double leftBorder, double rightBorder) : this()
         {

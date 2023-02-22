@@ -49,6 +49,8 @@ namespace Test
                 double leftBorder = Intervals[i - 1].RightBorder;
                 Intervals[i] = new Interval(leftBorder, CalculateNextBorder(leftBorder));
             }
+            Intervals[IntervalAmount - 1].RightBorder = Math.Pow(Math.Log(1000) / (double)weibullDistribution.Lambda, 1.0 / weibullDistribution.K);
+            Intervals[IntervalAmount - 1].Middle = (Intervals[IntervalAmount - 1].RightBorder + Intervals[IntervalAmount - 1].LeftBorder) / 2.0;
         }
 
         private double CalculateNextBorder(double leftBorder)

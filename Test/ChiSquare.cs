@@ -12,6 +12,8 @@ namespace Test
         public double chiCritical { get; private set; }
        public bool Check(IGenerator generator)
        {
+            if (generator.IntervalAmount < 4)
+                throw new ArgumentException("Interval amount must be greater than 3");
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             chiExperimental = 0; 
             chiCritical = excel.WorksheetFunction.ChiInv(0.05, generator.IntervalAmount - 2 - 1);
@@ -21,7 +23,7 @@ namespace Test
                 chiExperimental += Math.Pow(generator.Intervals[i].PointsAmount - generator.NumberAmount / generator.IntervalAmount, 2) 
                     / (generator.NumberAmount / generator.IntervalAmount); 
             }
-            Console.WriteLine($"{chiCritical} {chiExperimental}");
+
             excel.Quit();
             return (chiExperimental < chiCritical) ? true : false;
        }
