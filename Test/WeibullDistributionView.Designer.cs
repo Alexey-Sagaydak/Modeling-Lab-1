@@ -91,7 +91,7 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series1.Color = System.Drawing.SystemColors.InactiveCaption;
             series1.Legend = "Legend1";
-            series1.Name = "Area";
+            series1.Name = "Теор. площадь";
             series1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             series2.ChartArea = "ChartArea1";
             series2.Color = System.Drawing.Color.CornflowerBlue;
