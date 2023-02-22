@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.buildHistogramButton = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.kTextBox = new System.Windows.Forms.TextBox();
@@ -48,54 +48,72 @@
             this.label9 = new System.Windows.Forms.Label();
             this.numberAmountTextBox = new System.Windows.Forms.TextBox();
             this.intervalAmountTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // buildHistogramButton
             // 
-            this.buildHistogramButton.Location = new System.Drawing.Point(1076, 283);
+            this.buildHistogramButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buildHistogramButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.buildHistogramButton.Location = new System.Drawing.Point(39, 320);
             this.buildHistogramButton.Name = "buildHistogramButton";
-            this.buildHistogramButton.Size = new System.Drawing.Size(123, 40);
-            this.buildHistogramButton.TabIndex = 0;
-            this.buildHistogramButton.Text = "Построить гистограмму";
+            this.buildHistogramButton.Size = new System.Drawing.Size(127, 33);
+            this.buildHistogramButton.TabIndex = 5;
+            this.buildHistogramButton.Text = "Построить";
             this.buildHistogramButton.UseVisualStyleBackColor = true;
             this.buildHistogramButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(26, 48);
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(4, 4);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "NormDist";
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.Name = "normCurve";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(1007, 596);
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "NormDist";
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "normCurve";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(770, 519);
             this.chart1.TabIndex = 1;
+            this.chart1.TabStop = false;
             this.chart1.Text = "chart1";
             // 
             // kTextBox
             // 
-            this.kTextBox.Location = new System.Drawing.Point(1072, 87);
+            this.kTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.kTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.kTextBox.Location = new System.Drawing.Point(33, 38);
             this.kTextBox.Name = "kTextBox";
-            this.kTextBox.Size = new System.Drawing.Size(143, 20);
+            this.kTextBox.Size = new System.Drawing.Size(144, 29);
             this.kTextBox.TabIndex = 2;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(1051, 87);
+            this.label2.Location = new System.Drawing.Point(8, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 24);
             this.label2.TabIndex = 5;
@@ -103,16 +121,21 @@
             // 
             // chiSquareObservableTextBox
             // 
-            this.chiSquareObservableTextBox.Location = new System.Drawing.Point(1069, 207);
+            this.chiSquareObservableTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chiSquareObservableTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.chiSquareObservableTextBox.Location = new System.Drawing.Point(19, 206);
             this.chiSquareObservableTextBox.Name = "chiSquareObservableTextBox";
-            this.chiSquareObservableTextBox.Size = new System.Drawing.Size(143, 20);
-            this.chiSquareObservableTextBox.TabIndex = 7;
+            this.chiSquareObservableTextBox.Size = new System.Drawing.Size(161, 29);
+            this.chiSquareObservableTextBox.TabIndex = 5;
+            this.chiSquareObservableTextBox.TabStop = false;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(1064, 180);
+            this.label5.Location = new System.Drawing.Point(22, 179);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(154, 24);
             this.label5.TabIndex = 10;
@@ -120,9 +143,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(1068, 230);
+            this.label6.Location = new System.Drawing.Point(22, 249);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 24);
             this.label6.TabIndex = 11;
@@ -130,10 +154,14 @@
             // 
             // chiSquareCriticalTextBox
             // 
-            this.chiSquareCriticalTextBox.Location = new System.Drawing.Point(1068, 257);
+            this.chiSquareCriticalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chiSquareCriticalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.chiSquareCriticalTextBox.Location = new System.Drawing.Point(19, 276);
             this.chiSquareCriticalTextBox.Name = "chiSquareCriticalTextBox";
-            this.chiSquareCriticalTextBox.Size = new System.Drawing.Size(144, 20);
+            this.chiSquareCriticalTextBox.Size = new System.Drawing.Size(161, 29);
             this.chiSquareCriticalTextBox.TabIndex = 12;
+            this.chiSquareCriticalTextBox.TabStop = false;
             // 
             // label7
             // 
@@ -148,9 +176,10 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(1050, 60);
+            this.label3.Location = new System.Drawing.Point(7, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(20, 24);
             this.label3.TabIndex = 8;
@@ -158,26 +187,30 @@
             // 
             // lambdaTextBox
             // 
-            this.lambdaTextBox.Location = new System.Drawing.Point(1072, 61);
+            this.lambdaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lambdaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lambdaTextBox.Location = new System.Drawing.Point(33, 3);
             this.lambdaTextBox.Name = "lambdaTextBox";
-            this.lambdaTextBox.Size = new System.Drawing.Size(143, 20);
-            this.lambdaTextBox.TabIndex = 4;
+            this.lambdaTextBox.Size = new System.Drawing.Size(144, 29);
+            this.lambdaTextBox.TabIndex = 1;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(363, 18);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.label8.Location = new System.Drawing.Point(266, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(345, 18);
+            this.label8.Size = new System.Drawing.Size(447, 24);
             this.label8.TabIndex = 15;
             this.label8.Text = "Гистограмма частот генеральной совокупности";
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(1047, 112);
+            this.label4.Location = new System.Drawing.Point(3, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 24);
             this.label4.TabIndex = 34;
@@ -185,9 +218,10 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(1051, 139);
+            this.label9.Location = new System.Drawing.Point(7, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(20, 24);
             this.label9.TabIndex = 33;
@@ -195,42 +229,119 @@
             // 
             // numberAmountTextBox
             // 
-            this.numberAmountTextBox.Location = new System.Drawing.Point(1072, 113);
+            this.numberAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.numberAmountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.numberAmountTextBox.Location = new System.Drawing.Point(33, 73);
             this.numberAmountTextBox.Name = "numberAmountTextBox";
-            this.numberAmountTextBox.Size = new System.Drawing.Size(143, 20);
-            this.numberAmountTextBox.TabIndex = 32;
+            this.numberAmountTextBox.Size = new System.Drawing.Size(144, 29);
+            this.numberAmountTextBox.TabIndex = 3;
             // 
             // intervalAmountTextBox
             // 
-            this.intervalAmountTextBox.Location = new System.Drawing.Point(1072, 139);
+            this.intervalAmountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.intervalAmountTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.intervalAmountTextBox.Location = new System.Drawing.Point(33, 110);
             this.intervalAmountTextBox.Name = "intervalAmountTextBox";
-            this.intervalAmountTextBox.Size = new System.Drawing.Size(143, 20);
-            this.intervalAmountTextBox.TabIndex = 31;
+            this.intervalAmountTextBox.Size = new System.Drawing.Size(144, 29);
+            this.intervalAmountTextBox.TabIndex = 4;
             // 
-            // Form1
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.chart1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 27);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(973, 527);
+            this.tableLayoutPanel1.TabIndex = 35;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
+            this.panel1.Controls.Add(this.buildHistogramButton);
+            this.panel1.Controls.Add(this.chiSquareObservableTextBox);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.chiSquareCriticalTextBox);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(781, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(188, 519);
+            this.panel1.TabIndex = 36;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.lambdaTextBox, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.kTextBox, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.numberAmountTextBox, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.intervalAmountTextBox, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(180, 144);
+            this.tableLayoutPanel2.TabIndex = 35;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 2);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(979, 557);
+            this.tableLayoutPanel3.TabIndex = 36;
+            // 
+            // WeibullDistributionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 656);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.numberAmountTextBox);
-            this.Controls.Add(this.intervalAmountTextBox);
-            this.Controls.Add(this.label8);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.chiSquareCriticalTextBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.chiSquareObservableTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lambdaTextBox);
-            this.Controls.Add(this.kTextBox);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.buildHistogramButton);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.MinimumSize = new System.Drawing.Size(1000, 600);
+            this.Name = "WeibullDistributionView";
+            this.Text = "Распределение Вейбула";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WeibullDistributionView_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +365,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox numberAmountTextBox;
         private System.Windows.Forms.TextBox intervalAmountTextBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }
 

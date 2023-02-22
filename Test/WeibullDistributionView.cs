@@ -23,8 +23,8 @@ namespace Test
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 double k = Convert.ToDouble(kTextBox.Text);
                 double lambda = Convert.ToDouble(lambdaTextBox.Text);
                 int numberAmount = Convert.ToInt32(numberAmountTextBox.Text);
@@ -34,10 +34,10 @@ namespace Test
                 chiSquareObservableTextBox.Text = Convert.ToString(_viewModel.chiExperimental);
                 chiSquareCriticalTextBox.Text = Convert.ToString(_viewModel.chiCritical);
                 BuildHistogram();
-            //} catch (Exception ex)
-            //{
-             //   MessageBox.Show(ex.Message, "Error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error occured!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BuildHistogram()
@@ -58,6 +58,11 @@ namespace Test
                 chart1.Series[1].Points.AddXY(i, _viewModel.CurvePoints[index]);
                 index++;
            }*/
+        }
+
+        private void WeibullDistributionView_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            button1_Click_1(new object(), new EventArgs());
         }
     }
 }
