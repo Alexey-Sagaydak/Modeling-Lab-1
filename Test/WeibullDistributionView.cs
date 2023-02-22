@@ -46,8 +46,6 @@ namespace Test
 
 		private void BuildHistogram()
 		{
-			int index = 0;
-		   
 			chart1.Series[0].Points.Clear();
 			chart1.Series[1].Points.Clear();
 

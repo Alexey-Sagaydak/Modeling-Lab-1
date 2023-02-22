@@ -59,7 +59,13 @@ namespace Test
         {
             for (int i = 0; i < intervalAmount; i++)
             {
-                Frequencies[i] = (double)generator.Intervals[i].PointsAmount / (double)numberAmount;
+                //Частоты с учетом случайных чисел
+                Frequencies[i] = (double)generator.Intervals[i].PointsAmount / (double)numberAmount /
+                    (generator.Intervals[i].RightBorder - generator.Intervals[i].LeftBorder);
+
+                // Идеальный случай
+                //Frequencies[i] = 1.0 / ((double)intervalAmount * (generator.Intervals[i].RightBorder - generator.Intervals[i].LeftBorder));
+
                 Middles[i] = generator.Intervals[i].Middle;
             }
 
