@@ -50,12 +50,16 @@ namespace Test
             chart1.Series[1].Points.Clear();
             chart1.Series[2].Points.Clear();
 
-            chart1.Series[0].Points.AddXY(_viewModel.generator.Intervals[0].LeftBorder,
-                _viewModel.generator.weibullDistribution.Calculate(_viewModel.generator.Intervals[0].LeftBorder));
+			if (_viewModel.k > 0.5)
+			{
+				chart1.Series[0].Points.AddXY(_viewModel.generator.Intervals[0].LeftBorder,
+					_viewModel.generator.weibullDistribution.Calculate(_viewModel.generator.Intervals[0].LeftBorder));
 
-            chart1.Series[2].Points.AddXY(_viewModel.generator.Intervals[0].LeftBorder,
-				_viewModel.generator.weibullDistribution.Calculate(_viewModel.generator.Intervals[0].LeftBorder));
-            for (int i = 0; i < _viewModel.intervalAmount; i++)
+				chart1.Series[2].Points.AddXY(_viewModel.generator.Intervals[0].LeftBorder,
+					_viewModel.generator.weibullDistribution.Calculate(_viewModel.generator.Intervals[0].LeftBorder));
+			}
+			
+			for (int i = 0; i < _viewModel.intervalAmount; i++)
 			{
 				chart1.Series[0].Points.AddXY(_viewModel.Middles[i], _viewModel.Frequencies[i]);
                 chart1.Series[1].Points.AddXY(_viewModel.Middles[i], _viewModel.Frequencies[i]);
